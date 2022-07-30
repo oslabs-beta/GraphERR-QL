@@ -1,82 +1,14 @@
-import { React, useContext } from 'react';
-import styled from 'styled-components';
+import { useContext } from 'react';
+
 import { LiveContext } from '../LiveMode/LiveContext';
 import {
-  StyledSuccessWithResponse,
   StyledSuccessNoResponse,
-  StyledErrorNoResponse,
-  StyledErrorWithResponse,
+  DataContainer,
+  IncomingDataContainer,
+  TextContainer,
+  ErrorTextContainer,
+  CurrentQueryResponse,
 } from './styles/LoggerResponse.styled';
-
-// all of these styled components just for display/info when testing incomming info, can make new ones
-const DataContainer = styled.div`
-  display: grid;
-`;
-// grid-template-columns: 1fr 1fr;
-
-//container
-const IncomingDataContainer = styled.div`
-  padding: 1rem;
-  display: grid;
-  grid-gap: 1em;
-`;
-
-//quote
-const TextContainer = styled.div`
-  border-radius: 0.3rem;
-`;
-
-const CurrQuote = styled.div`
-  border-radius: 0.3rem;
-`;
-
-const ErrorTextContainer = styled.div`
-  background-color: #e9eef0;
-  border: 7px solid #ff1616;
-  color: black;
-  border-radius: 20px;
-  padding: 10px;
-  font-size: 1.15em;
-`;
-
-const ErrorsDispay = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`;
-
-const QueryDisplay = styled.div`
-  display: flex;
-  font-weight: 900;
-`;
-const ResponseDisplay = styled.div`
-  display: flex;
-`;
-
-const ErrorItem = styled.h3`
-  color: #ff1616;
-`;
-
-const QueryResponse = styled.pre`
-  background-color: #e9eef0;
-
-  color: black;
-
-  padding: 15px 15px;
-  font-size: 1rem;
-`;
-
-const CurrentQueryResponse = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-width: 87.25vw;
-  background-color: #e9eef0;
-  border: 7px solid #078aa8;
-  color: black;
-  border-radius: 20px;
-  padding: 15px 15px;
-`;
 
 function LoggerBox() {
   const { liveQuery, liveResponse, dataLog } = useContext(LiveContext);
@@ -138,7 +70,6 @@ function LoggerBox() {
     });
     return (
       <>
-        {/* can wrap each item in styled component  */}
         <div></div>
         <StyledSuccessNoResponse>{queryResponse}</StyledSuccessNoResponse>
       </>
@@ -160,7 +91,6 @@ function LoggerBox() {
               </TextContainer>
             )}
           </CurrentQueryResponse>
-          {/* can make style component to hold the displayDataLog value */}
           <h3>data log:</h3>
           <p>{displayDataLog}</p>
         </IncomingDataContainer>

@@ -1,10 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
-// import { w3cwebsocket as WebSocket } from "websocket"
-// import WebScoket from 'ws';
+
 
 import styled from 'styled-components';
-// import MainContainer from './components/MainContainer';
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -63,17 +61,7 @@ const AUTHORS_BDAY_QUERY = `
 }`;
 
 function App() {
-  // ws.on('connection', () => {
-  //   console.log('emitting connection from front end');
-  //   ws.emit('connection');
-  // });
-  // ws.on('open', function open() {
-  //   ws.send('something');
-  // });
 
-  // ws.on('message', function message(data) {
-  //   console.log(`recieved: `, data);
-  // });
 
   const [response, setResponse] = useState([]);
   const [birthday, setBirthday] = useState({});
@@ -83,8 +71,6 @@ function App() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // Connection: 'Upgrade',
-        // Upgrade: 'Websocket',
       },
       body: JSON.stringify({ query: BOOKS_QUERY }),
     })
@@ -138,7 +124,6 @@ function App() {
             Fetch an ERROR - Real World
           </Button>
           <Button onClick={resetBirthdayState}>Reset Birthday State</Button>
-          {/* <Button onClick={sendMessage}>Send MSG</Button> */}
         </ButtonContainer>
 
         <ResponseData>

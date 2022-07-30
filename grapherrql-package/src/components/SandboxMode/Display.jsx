@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+
 import ResponseBox from './ResponseBox';
 import QueryBox from './QueryBox';
 import APIInput from './RunQuery'

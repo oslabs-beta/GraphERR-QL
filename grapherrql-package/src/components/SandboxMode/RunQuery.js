@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { GraphContext } from './Context';
 import { BsPlayCircle } from 'react-icons/bs';
 

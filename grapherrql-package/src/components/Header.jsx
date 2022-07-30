@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { useState } from 'react';
 import LoggerBox from './LiveMode/LoggerBox';
 import logo from '../images/GraphErrlogo.svg';
 import { Logo, StyledHeader } from './LiveMode/styles/Header.styled';

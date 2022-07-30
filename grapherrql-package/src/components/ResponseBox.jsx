@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Controlled as CodeMirror } from 'react-codemirror2';
 import { GraphContext } from './Context';
 
